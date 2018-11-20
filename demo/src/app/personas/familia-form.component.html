@@ -1,0 +1,66 @@
+<form  name="editForm" class="needs-validation" role="form" novalidate  #editForm="ngForm" (ngSubmit)="save()">
+<div class="row">
+    <div class="col-md-8"><h2>Datos Familia</h2></div>
+    <div class="col-md-4"><h2>{{persona?.name}}  {{persona?.lastName}}</h2> </div>
+  </div>
+  <div class="form-group"> 
+      <label for="identify_id" class="control-label">Identificador/Pasaporte</label>
+      <input type="text" class="form-control" id="identify_id" name="identify" placeholder="12345" [(ngModel)]="familia.identify" required>
+    </div>    
+    
+    <div class="form-group"> <!-- Full Name -->
+        <label for="full_name_id" class="control-label">Nombre</label>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Pedro" [(ngModel)]="familia.name" required>
+    </div>    
+    
+    <div class="form-group"> <!-- Full Name -->
+      <label for="full_last_name_id" class="control-label">Apellido</label>
+      <input type="text" class="form-control" id="full_last_name_id" name="full_last_name" placeholder="Rojas" [(ngModel)]="familia.lastName">
+    </div>  
+    
+    <div class="form-group">
+          <label for="full_last_name_id" class="control-label">Sexo</label>
+    <div class="radio-inline">
+      <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="F" [(ngModel)]="familia.gender">
+          F
+      </label>
+    </div>
+    <div class="radio-inline">
+      <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="M" [(ngModel)]="familia.gender">
+          M
+      </label>
+      </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Parentesco</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Seleccione</option>
+          <option>Madre</option>
+          <option>Padre</option>
+          <option>Esposa</option>
+          <option>Hijo</option>
+          <option>Hermano</option>
+        </select>
+      </div>      
+    
+    
+    
+    <div class="form-group"> <!-- Street 1 -->
+        <label for="street1_id" class="control-label">Dirección</label>
+        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Dirección" [(ngModel)]="familia.address">
+    </div>                    
+                            
+      <div class="form-group"> 
+        <label for="zip_id" class="control-label">Correo</label>
+        <input type="text" class="form-control" id="zip_id" name="zip" placeholder="alerojaslopenza@gmail.com" [(ngModel)]="familia.email">
+    </div>        
+    
+    <div class="form-group"> <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button class="btn btn-secondary" [routerLink]="['/personas/', persona?.id,'familia']">Regresar</button>
+    </div>     
+    
+  </form>

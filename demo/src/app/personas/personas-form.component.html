@@ -1,0 +1,50 @@
+<form  name="editForm" class="needs-validation" role="form" novalidate  #editForm="ngForm" (ngSubmit)="save()">
+  <h2>Datos</h2>
+  <div class="form-group"> 
+                <label for="identify_id" class="control-label">Identificador/Pasaporte</label>
+                <input type="text" class="form-control" id="identify_id" name="identify" placeholder="12345" [(ngModel)]="persona.identify" required>
+              </div>    
+            
+              <div class="form-group"> <!-- Full Name -->
+                  <label for="full_name_id" class="control-label">Nombre</label>
+                  <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Pedro" [(ngModel)]="persona.name" required>
+              </div>    
+            
+              <div class="form-group"> <!-- Full Name -->
+                <label for="full_last_name_id" class="control-label">Apellido</label>
+                <input type="text" class="form-control" id="full_last_name_id" name="full_last_name" placeholder="Rojas" [(ngModel)]="persona.lastName">
+            </div>  
+            
+            <div class="form-group">
+                    <label for="full_last_name_id" class="control-label">Sexo</label>
+            <div class="radio-inline">
+                <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="F" [(ngModel)]="persona.gender">
+                    F
+                </label>
+            </div>
+            <div class="radio-inline">
+                <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="M" [(ngModel)]="persona.gender">
+                    M
+                </label>
+                </div>
+                </div>
+            
+              <div class="form-group"> <!-- Street 1 -->
+                  <label for="street1_id" class="control-label">Dirección</label>
+                  <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Dirección" [(ngModel)]="persona.address">
+              </div>                    
+                                      
+                <div class="form-group"> 
+                  <label for="zip_id" class="control-label">Correo</label>
+                  <input type="text" class="form-control" id="zip_id" name="zip" placeholder="alerojaslopenza@gmail.com" [(ngModel)]="persona.email">
+              </div>        
+              
+              <div class="form-group"> <!-- Submit Button -->
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>    
+  
+  
+</form>
+

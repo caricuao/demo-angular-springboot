@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+            <div class="col-xs-12 col-md-8"><h3>Familiares</h3></div>
+            <div class="col-xs-6 col-md-4 align-bottom">
+                <button type="button" class="btn btn-primary" [disabled]="isNew" [routerLink]="['../../personas-form', persona.id,'familia']" >Nuevo</button>
+            </div>
+          </div>
+    
+      <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let family of persona.listFamily">
+          <td>{{family.name}}</td>
+          <td>{{family.lastName}}</td>
+          <td>john@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

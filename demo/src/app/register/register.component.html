@@ -1,0 +1,48 @@
+<div *ngIf="isSignedUp; else signupForm">
+    Su registro es exitoso. Por favor Iniciar sesión!
+</div>
+
+<ng-template #signupForm>
+  <div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel" required />
+        <div *ngIf="f.submitted && name.invalid">
+          <div *ngIf="name.errors.required">Nombre es requerido</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Usuario</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
+          required />
+        <div *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Usuario es requerido</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
+        <div *ngIf="f.submitted && email.invalid">
+          <div *ngIf="email.errors.required">Correo es requerido</div>
+          <div *ngIf="email.errors.email">Debe ser una dirección valida</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+          required minlength="6" />
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Contraseña es requerida</div>
+          <div *ngIf="password.errors.minlength">Contraseña debe ser mayor a 5 caracteres</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary">Registro</button>
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+          Falló el Registro!<br/>{{errorMessage}}
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

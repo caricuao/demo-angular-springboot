@@ -1,0 +1,39 @@
+{{errorMessage}}
+<div>
+    <div class="row">
+        <div class="col-md-8"><h2>Personas</h2></div>
+        <div class="col-md-4">
+            <button class="btn btn-primary float-right" [routerLink]="['personas-form']">
+                <span class="fa fa-plus"></span>
+                <span >
+                Nuevo
+                </span>
+            </button>          
+        </div>
+      </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Identificador</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Correo</th>
+        <th scope="col">...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas ;trackBy: trackId">
+        <td><a [routerLink]="['./personas-form', persona.id ]">{{persona.identify}}</a></td>
+        <td>{{persona.name}}</td>
+        <td>{{persona.lastName}}</td>
+        <td>{{persona.gender}}</td>
+        <td>{{persona.address}}</td>
+        <td>{{persona.email}}</td>
+        <td><a [routerLink]="['/personas/', persona.id,'familia']">Familia</a></td>
+        <!--td>{{persona.dateOfBirth | date: 'dd/MM/yyyy'}}</td -->
+      </tr>
+    </tbody>
+  </table>
+</div>
