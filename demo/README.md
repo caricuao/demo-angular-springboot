@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Angular project consuming services from a springboot project with postgres database
 
+There is a folder called bd and there is a backup of the database called "demo"
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
